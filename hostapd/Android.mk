@@ -6,11 +6,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
-WPA_BUILD_HOSTAPD := false
-ifneq ($(BOARD_HOSTAPD_DRIVER),)
-  WPA_BUILD_HOSTAPD := true
-  CONFIG_DRIVER_$(BOARD_HOSTAPD_DRIVER) := y
-endif
+WPA_BUILD_HOSTAPD := true
+CONFIG_DRIVER_NL80211 := y
 
 ifeq ($(WPA_BUILD_HOSTAPD),true)
 
